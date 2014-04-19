@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MostHitIP" language="groovy" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="91051b16-7e08-4001-8333-f99e24876b5d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="totalRequest" class="java.lang.Integer">
+		<fieldDescription><![CDATA[totalRequest]]></fieldDescription>
+	</field>
+	<field name="hostName" class="java.lang.String">
+		<fieldDescription><![CDATA[hostName]]></fieldDescription>
+	</field>
+	<field name="sourceIpAddress" class="java.lang.String">
+		<fieldDescription><![CDATA[sourceIpAddress]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="378032b7-ebd1-4551-bd6c-25e5d8dcf25c" style="table_TH" x="0" y="0" width="105" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IPAddress]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7fab09d0-20b3-480b-9e2d-2badba67bcad" style="table_TH" x="105" y="0" width="120" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Host Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="311e8949-bd9c-4964-8656-7cf4bebde634" style="table_TH" x="225" y="0" width="86" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Hit]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement uuid="9ef45711-2e9f-46e8-8967-1caa6188e19d" style="table_TD" x="0" y="0" width="105" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sourceIpAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="279e60f0-7654-4cc7-8261-ae32e4f31a93" style="table_TD" x="105" y="0" width="120" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hostName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="02e03853-5dd0-4259-a792-14e41c0f4c7e" style="table_TD" x="225" y="0" width="86" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalRequest}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CallFrequencyGraph" language="groovy" pageWidth="612" pageHeight="1584" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ad4d4a52-69d6-4a59-b2dd-5c26ae84e43a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="originatingCallLocation" class="java.lang.String">
+		<fieldDescription><![CDATA[originatingCallLocation]]></fieldDescription>
+	</field>
+	<field name="callTime" class="java.util.Date">
+		<fieldDescription><![CDATA[callTime]]></fieldDescription>
+	</field>
+	<field name="callFrequency" class="java.lang.Integer">
+		<fieldDescription><![CDATA[callFrequency]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="207">
+			<barChart>
+				<chart>
+					<reportElement uuid="e7afbb5a-cb30-4ae4-84e0-0c38d438e912" x="0" y="0" width="355" height="206"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{originatingCallLocation}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{callTime}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{callFrequency}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>
